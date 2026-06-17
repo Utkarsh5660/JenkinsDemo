@@ -21,5 +21,12 @@ pipeline{
                 sh 'mvn test'
             }
         }
+        
+        stage('Package'){
+            steps{
+                echo 'Packaing application in JAR...'
+                sh 'mvn package -DskipTests'
+            }
+        }
     }
 }
