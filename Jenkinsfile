@@ -28,5 +28,13 @@ pipeline{
                 sh 'mvn package -DskipTests'
             }
         }
+        
+        stage('Deploy'){
+            steps{
+                echo 'Deploying the jar file...'
+                sh 'java -jar target/jenkins-demo-0.0.1-SNAPSHOT.jar &'
+            }
+        }
+        
     }
 }
